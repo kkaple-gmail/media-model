@@ -18,7 +18,7 @@ type Pagination struct {
 	PageSize   int `json:"pageSize"`
 }
 
-func MustParse(s string) uuid.UUID {
+func TryParse(s string) uuid.UUID {
 	u, err := uuid.Parse(s)
 	if err != nil {
 		fmt.Errorf("error generating uuid from string %s: %w", s, err)
