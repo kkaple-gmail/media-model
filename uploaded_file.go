@@ -8,7 +8,7 @@ type UploadedFile struct {
 	Size         uint64 `json:"size"`
 }
 
-func NewUploadedFile(size uint64) *UploadFile {
-	id = uuid.New()
-	return &UploadFile{ID: id, Size: size}
+func NewUploadedFile(size uint64) *UploadedFile {
+	id := uuid.New()
+	return &UploadedFile{ID: id, Size: size}
 }
