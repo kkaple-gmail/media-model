@@ -10,5 +10,8 @@ type UploadedFile struct {
 
 func NewUploadedFile(size uint64) *UploadedFile {
 	id := uuid.New()
-	return &UploadedFile{ID: id, Size: size}
+	return &UploadedFile{
+		Base: Base{ID: id},
+		Size: size,
+	}
 }
