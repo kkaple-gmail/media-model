@@ -31,7 +31,7 @@ func NewUploadedFile(
 		Base:         Base{ID: id},
 		OriginalName: origName,
 		Size:         size,
-		Mime:         mime,
+		MIME:         mime,
 		SHA256:       sha256,
 	}
 }
