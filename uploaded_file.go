@@ -14,17 +14,17 @@ const (
 
 type UploadedFile struct {
 	Base
-	OriginalName string            `json:"original_name"`
-	Size         uint64            `json:"size"`
-	MIME         string            `json:"mime"`
-	SHA256       []byte            `json:"sha256"`
-	State        UploadedFileState `json:"state"`
+	OriginalName string              `json:"original_name"`
+	Size         int64               `json:"size"`
+	MIME         map[string][]string `gorm:"type:jsonb" json:"mime"`
+	SHA256       []byte              `json:"sha256"`
+	State        UploadedFileState   `json:"state"`
 }
 
 func NewUploadedFile(
 	origName string,
-	size uint64,
-	mime string,
+	size int64,
+	mime map[string][]string,
 	sha256 []byte) *UploadedFile {
 	id := uuid.New()
 	return &UploadedFile{
