@@ -1,6 +1,8 @@
 package model
 
-import "github.com/google/uuid"
+import (
+	"github.com/google/uuid"
+)
 
 type UploadedFileState string
 
@@ -33,5 +35,6 @@ func NewUploadedFile(
 		Size:         size,
 		MIME:         mime,
 		SHA256:       sha256,
+		State:        New,
 	}
 }
